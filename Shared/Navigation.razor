@@ -1,0 +1,37 @@
+﻿@inject IJSRuntime JSRuntime
+
+<nav class="navbar navbar-light bg-light text-dark fixed-top navbar-expand-lg justify-content-start justify-content-lg-between">
+    <button class="navbar-toggler bg-light text-dark border-0 mr-2" data-toggle="collapse" data-target="#mainMenu">
+        <span class="fas fa-bars"></span>
+    </button>
+    <a class="p-2 card-link text-primary text-uppercase font-weight-bold mr-lg-3" href="/">Название сайта</a>
+    <div id="mainMenu" class="collapse navbar-collapse flex-column flex-lg-row justify-content-lg-between">
+        <div class="navbar-nav">
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Новости и объявления</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="contacts">Контакты</a>
+        </div>
+        <div class="d-flex mt-1 mt-lg-0">
+            <div class="flex-grow-1 d-flex flex-row-reverse flex-lg-row">
+                <input class="bg-light text-dark border-0 form-control flex-grow-1 mr-1" />
+                <button class="btn btn-light text-left mr-1" onclick="$(this).prev().focus()">
+                    <span class="fas fa-search" style="font-size:1.1em;"></span>
+                </button>
+            </div>            
+            <div class="d-flex">
+                <button class="btn btn-light text-left mr-1" onclick="$('#my').attr('href') == '../bootstrap/css/bootstrap.min.css' ? $('#my').attr('href', '../bootstrap/css/bootstrap1.css') : $('#my').attr('href', '../bootstrap/css/bootstrap.min.css')">
+                    <span class="far fa-sun" style="font-size:1.2em;"></span>
+                </button>
+                <a class="btn btn-light text-left" data-toggle="dropdown">
+                    <span class="fas fa-user-circle" style="font-size:1.35em; cursor:pointer"></span>
+                </a>
+                <div class="dropdown-menu bg-dark text-light dropdown-menu-right mt-n2 mr-3">
+                    <a class="dropdown-item text-light bg-dark" href="/profile">профиль</a>
+                    <a class="dropdown-item text-light bg-dark" href="#">выйти</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+@code {
+}
