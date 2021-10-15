@@ -1,23 +1,29 @@
 ﻿@inject IJSRuntime JSRuntime
 
-<nav class="navbar navbar-light bg-light text-dark fixed-top navbar-expand-lg justify-content-start justify-content-lg-between">
+<nav class="navbar navbar-light bg-light text-dark fixed-top navbar-expand-lg @*justify-content-start justify-content-lg-between*@">
     <button class="navbar-toggler bg-light text-dark border-0 mr-2" data-toggle="collapse" data-target="#mainMenu">
         <span class="fas fa-bars"></span>
     </button>
-    <a class="p-2 card-link text-primary text-uppercase font-weight-bold mr-lg-3" href="/">Название сайта</a>
+        <a class="p-2 card-link text-primary text-uppercase font-weight-bold mr-lg-3 flex-grow-1 flex-lg-grow-0" href="/">
+            Название сайта
+        </a>
+        <span class="badge badge-dark mr-2 d-lg-none" style="font-size:.9em">Новости и объявления</span>     
     <div id="mainMenu" class="collapse navbar-collapse flex-column flex-lg-row justify-content-lg-between">
         <div class="navbar-nav">
-            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Новости и объявления</a>
-            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="contacts">Контакты</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Главная</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Расписание</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Фотографии</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Контакты</a>
         </div>
         <div class="d-flex mt-1 mt-lg-0">
-            <div class="flex-grow-1 d-flex flex-row-reverse flex-lg-row">
+            <div class="flex-grow-1 d-flex flex-row-reverse flex-lg-row align-items-center">
+                <span class="badge badge-dark mr-2 d-none d-lg-block" style="font-size:.9em">Новости и объявления</span>
                 <input class="bg-light text-dark border-0 form-control flex-grow-1 mr-1" />
-                <button class="btn btn-light text-left mr-1" onclick="$(this).prev().focus()">
+                <button class="btn btn-light text-left mr-1" onclick=" $(this).prev().focus();">
                     <span class="fas fa-search" style="font-size:1.1em;"></span>
                 </button>
-            </div>            
-            <div class="d-flex">
+            </div>
+            <div class="d-flex">                
                 <button class="btn btn-light text-left mr-1" onclick="$('#my').attr('href') == '../bootstrap/css/bootstrap.min.css' ? $('#my').attr('href', '../bootstrap/css/bootstrap1.css') : $('#my').attr('href', '../bootstrap/css/bootstrap.min.css')">
                     <span class="far fa-sun" style="font-size:1.2em;"></span>
                 </button>
@@ -31,6 +37,7 @@
             </div>
         </div>
     </div>
+    
 </nav>
 
 @code {
