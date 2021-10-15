@@ -1,26 +1,30 @@
 ﻿@inject IJSRuntime JSRuntime
 
-<nav class="navbar navbar-light bg-light text-dark fixed-top navbar-expand-lg @*justify-content-start justify-content-lg-between*@">
+
+<nav class="navbar navbar-light bg-light text-dark fixed-top navbar-expand-lg">
     <button class="navbar-toggler bg-light text-dark border-0 mr-2" data-toggle="collapse" data-target="#mainMenu">
         <span class="fas fa-bars"></span>
     </button>
-        <a class="p-2 card-link text-primary text-uppercase font-weight-bold mr-lg-3 flex-grow-1 flex-lg-grow-0" href="/">
+        <a class="p-2 card-link text-primary text-uppercase font-weight-bold mr-lg-3 flex-grow-1 flex-lg-grow-0" @onclick='()=>title="Новости и объявления"' href="/">
             Название сайта
         </a>
-        <span class="badge badge-dark mr-2 d-lg-none" style="font-size:.9em">Новости и объявления</span>     
+        <span class="badge badge-dark mr-2 d-lg-none  font-weight-light" style="font-size:.9em">@title</span>     
     <div id="mainMenu" class="collapse navbar-collapse flex-column flex-lg-row justify-content-lg-between">
         <div class="navbar-nav">
-            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Главная</a>
-            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Расписание</a>
-            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Фотографии</a>
-            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" href="/">Контакты</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" @onclick='()=>title="Новости и объявления"' href="/">Главная</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" @onclick='()=>title="Расписание"' href="/">Расписание</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" @onclick='()=>title="Фотографии"' href="/">Фотографии</a>
+            <a class="btn btn-light text-left mr-lg-1 mt-1 mt-lg-0" @onclick='()=>title="Контакты"' href="/">Контакты</a>
         </div>
         <div class="d-flex mt-1 mt-lg-0">
             <div class="flex-grow-1 d-flex flex-row-reverse flex-lg-row align-items-center">
-                <span class="badge badge-dark mr-2 d-none d-lg-block" style="font-size:.9em">Новости и объявления</span>
                 <input class="bg-light text-dark border-0 form-control flex-grow-1 mr-1" />
                 <button class="btn btn-light text-left mr-1" onclick=" $(this).prev().focus();">
-                    <span class="fas fa-search" style="font-size:1.1em;"></span>
+                    <span class="fas fa-search" style="font-size:1em;"></span>
+                </button>
+                <span class="badge badge-dark mr-2 mr-lg-5 mb-0 d-none d-lg-block text-nowrap font-weight-light" style="font-size:1.1em">@title</span>
+                <button class="btn btn-light text-left mr-1 text-nowrap" onclick=" $(this).prev().focus();">
+                    <i class="fas fa-feather" style="font-size:1.2em;"></i>
                 </button>
             </div>
             <div class="d-flex">                
@@ -28,10 +32,10 @@
                     <span class="far fa-sun" style="font-size:1.2em;"></span>
                 </button>
                 <a class="btn btn-light text-left" data-toggle="dropdown">
-                    <span class="fas fa-user-circle" style="font-size:1.35em; cursor:pointer"></span>
+                    <i class="far fa-address-card" style="font-size:1.3em; cursor:pointer"></i>
                 </a>
                 <div class="dropdown-menu bg-dark text-light dropdown-menu-right mt-n2 mr-3">
-                    <a class="dropdown-item text-light bg-dark" href="/profile">профиль</a>
+                    <a class="dropdown-item text-light bg-dark" @onclick='()=>title="Профиль"' href="/profile">профиль</a>
                     <a class="dropdown-item text-light bg-dark" href="#">выйти</a>
                 </div>
             </div>
@@ -41,4 +45,5 @@
 </nav>
 
 @code {
+    string title = "Новости и объявления";
 }
